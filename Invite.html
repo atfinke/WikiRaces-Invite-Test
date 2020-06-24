@@ -2,10 +2,13 @@
 <html>
 
 <script>
-console.log(window.location.search)
-var urlParams = new URLSearchParams(window.location.search);
-console.log(urlParams.has('code'));
-console.log(urlParams.get('code'));
+let urlParams = new URLSearchParams(window.location.search);
+if (urlParams.has('code')) {
+  let code = urlParams.get('code');
+  window.location.replace("wikiraces://invite?code=" + code);
+} else {
+  alert("No code param");
+}
 </script>
 
 <body>
