@@ -15,10 +15,10 @@
                 let code = urlParams.get('code');
                 return "wikiraces://invite?code=" + code;
             } else {
-                alert("No code param");
+                alert("Invalid Invite");
             }
         }
-//         window.location.replace(inviteURL());
+        window.location.replace(inviteURL());
     </script>
     <style>
         body {
@@ -28,9 +28,8 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            min-height: 100vh;
+            min-height: 90vh;
         }
-
         #icon {
             width: 140px;
             height: 140px;
@@ -38,20 +37,17 @@
             border: 2px solid #e8e8e8;
             border-radius: 32px;
         }
-
         #app-name {
             font-size: 40px;
             font-weight: 500;
             margin-top: 10px;
             margin-bottom: 5px;
         }
-
         #subtitle {
             font-size: 16px;
             font-weight: 600;
             color: #a9a9a9;
         }
-
         #open-button {
             margin: 0 auto;
             margin-top: 70px;
@@ -65,12 +61,11 @@
             letter-spacing: 2px;
         }
     </style>
-
 <body onload="configButton()">
     <img id='icon' src='icon.jpg'></img>
     <div id='app-name'>WikiRaces</div>
     <div id='subtitle'>RACE INVITE</div>
-    <a id='open-button' href='apple.com'>OPEN</a>
+    <a id='open-button' href='apple.com'>ACCEPT</a>
 </body>
 </head>
 
