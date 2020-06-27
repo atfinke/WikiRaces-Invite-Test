@@ -11,14 +11,18 @@
         }
         function inviteURL() {
             let urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.has('code')) {
+            if (typeof urlParams != "undefined" && urlParams.has('code')) {
                 let code = urlParams.get('code');
                 return "wikiraces://invite?code=" + code;
             } else {
                 alert("Invalid Invite");
+                return;
             }
         }
-//         window.location.replace(inviteURL());
+        let url = inviteURL()
+        if (typeof url != "undefined") {
+            setTimeout(function() { window.location.replace(url); }, 500);
+        }
     </script>
     <style>
         body {
@@ -34,7 +38,7 @@
             width: 140px;
             height: 140px;
             margin: 0 auto;
-            border: 2px solid #e8e8e8;
+            border: 2.5px solid #e8e8e8;
             border-radius: 32px;
         }
         #app-name {
@@ -62,10 +66,12 @@
         }
     </style>
 <body onload="configButton()">
-    <img id='icon' src='icon.jpg' href='https://apps.apple.com/us/app/wikiraces-3/id1030997904'></img>
+    <a href='https://apps.apple.com/us/app/wikiraces-3/id1030997904'>
+        <img id='icon' src='icon.jpg'></img>
+    </a>
     <div id='app-name'>WikiRaces</div>
     <div id='subtitle'>RACE INVITE</div>
-    <a id='open-button' href='apple.com'>ACCEPT</a>
+    <a id='open-button' href='https://apps.apple.com/us/app/wikiraces-3/id1030997904'>ACCEPT</a>
 </body>
 </head>
 
